@@ -1,0 +1,7 @@
+FROM node
+WORKDIR .
+
+COPY ./hello-world.js  .
+
+EXPOSE 3000 
+CMD ["node", "hello-world.js"]
