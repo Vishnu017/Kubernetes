@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-deployment
+  name: express-deployment
   labels:
-    app: node-deploy
+    app: express-deploy
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
-      app: node-app
+      app: express-app
   template:
     metadata:
       labels:
-        app: node-app
+        app: express-app
     spec:
       containers:
-      - name: sample-node-app
-        image: sampleapp/v1
+      - name: sample-express-app
+        image: express-app
         ports:
         - containerPort: 3000
         imagePullPolicy: IfNotPresent
